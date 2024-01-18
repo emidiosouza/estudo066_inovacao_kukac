@@ -11,7 +11,7 @@ O Assistente SpeckDev é uma aplicação inovadora que combina a capacidade de p
 ## Instalação
 Para instalar e rodar o Assistente SpeckDev localmente, siga os passos abaixo:
 
-\```bash
+```bash
 # Clone o repositório
 git clone https://github.com/emidiosouza/estudo066_inovacao_kukac.git
 
@@ -23,7 +23,7 @@ pip install -r requirements.txt
 
 # Execute a aplicação
 streamlit run speck_assistant.py
-\```
+```
 
 ## Uso
 Ao iniciar a aplicação, você será apresentado a uma interface web onde pode interagir com o assistente. Digite sua pergunta ou comentário e o assistente responderá, convertendo o texto em áudio.
