@@ -28,8 +28,8 @@ h1, h2, h3, h4, h5, h6 {
     color: #ffffff;
 }
 
-.caption {
-        color: #ffffff;  # Você pode substituir esta cor pelo código da cor desejada
+ .stSidebar .caption {
+        color: #ffffff;  /* Substitua #FF6347 pela cor desejada */
     }
             
 }
