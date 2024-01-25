@@ -62,7 +62,7 @@ with col1:
     st.markdown("<b style='text-align: center; color: black;'>Como posso ajudar hoje, Kukacker?</b>", unsafe_allow_html=True)
 with col2:
     st.image('https://kukac.com.br/wp-content/uploads/20220125151123.png', width=40)   
-with col 3:
+with col3:
     audio_on = st.toggle('ÁUDIO')
 st.divider()
 
