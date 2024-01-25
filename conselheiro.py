@@ -148,7 +148,7 @@ elif hasattr(st.session_state.run, 'status') and st.session_state.run.status == 
 
 
 # Pega input do usuário
-if prompt := st.chat_input("Escreva aqui a sua mensagem!"):
+if prompt := st.chat_input("Escreva aqui a sua mensagem."):
     with st.chat_message('user'):
         st.write(prompt)
 
