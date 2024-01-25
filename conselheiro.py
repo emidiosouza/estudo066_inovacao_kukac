@@ -5,12 +5,33 @@ import time
 
 # Inicialização da variável audio
 audio = None
+audio_on = False
 
 from openai import OpenAI
 client = OpenAI()
 
 # Select the preferred model
 MODEL = "gpt-4-1106-preview"
+
+st.set_page_config(page_title="Conselheiro Kukacker")
+
+# CSS para mudar a fonte para Dosis
+st.markdown("""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&display=swap');
+
+html, body, [class*="st-"], h1, h2, h3, h4, h5, h6 {
+    font-family: 'Dosis', sans-serif;
+}            
+
+h1, h2, h3, h4, h5, h6 {
+    color: #B5B5B5;
+}
+            
+}
+                  
+</style>
+""", unsafe_allow_html=True)
 
 #Controle de estados
 if "session_id" not in st.session_state: # Used to identify each session
@@ -30,14 +51,21 @@ if "last_processed_message_id" not in st.session_state:
     st.session_state.last_processed_message_id = None
 
 #Configuração da página Streamlit
-st.set_page_config(page_title="Assistente Speck EAD")
+st.sidebar.image('https://kukac.com.br/wp-content/uploads/20211110174809.png', width=280)
+st.sidebar.divider()
 st.sidebar.title("Conselheiro Kukacker")
+st.sidebar.caption("Desenvolvido pela área de inovação da Kukac")
+st.sidebar.caption("Versão atual: 0.0.1")
+st.sidebar.caption("Usando gpt-4-1106-preview API")
+st.sidebar.caption(st.session_state.session_id)
 st.sidebar.divider()
-st.sidebar.markdown("Desenvolvido pela área de inovação da Kukac")
-st.sidebar.markdown("Current Version: 0.0.1")
-st.sidebar.markdown("Using gpt-4-1106-preview API")
-st.sidebar.markdown(st.session_state.session_id)
-st.sidebar.divider()
+
+col1, col2, col3, col4, col5= st.columns(5)
+with col3:
+    st.image('https://kukac.com.br/wp-content/uploads/20220125151123.png', width=60)   
+st.divider()
+
+audio_on = st.toggle('ÁUDIO')
 
 # Função para gerar áudio
 def generate_audio_from_text(tts_text):
@@ -66,7 +94,6 @@ if "assistant" not in st.session_state:
             'session_id': st.session_state.session_id,
         }
     )
-
 
 # Se a run anterior completar, ele carrega as mensagens.
 elif hasattr(st.session_state.run, 'status') and st.session_state.run.status == "completed":
@@ -108,7 +135,9 @@ elif hasattr(st.session_state.run, 'status') and st.session_state.run.status == 
                 break
             
         if ultima_mensagem and ultima_mensagem.content: # Verificando se a última mensagem do assistente foi encontrada
-            audio_file_path = generate_audio_from_text(ultima_mensagem.content[0].text.value)          
+            if audio_on:
+                audio_file_path = generate_audio_from_text(ultima_mensagem.content[0].text.value)          
+
 
 # Mostrar mensagens na ordem reversa
     for message in reversed(st.session_state.messages.data):
@@ -121,7 +150,7 @@ elif hasattr(st.session_state.run, 'status') and st.session_state.run.status == 
 
 
 # Pega input do usuário
-if prompt := st.chat_input("How can I help you?"):
+if prompt := st.chat_input("Como posso ajudar hoje, Kukacker?"):
     with st.chat_message('user'):
         st.write(prompt)
 
@@ -175,4 +204,5 @@ if hasattr(st.session_state.run, 'status'):
             st.rerun()
 
     elif st.session_state.run.status == "completed":
-        st.audio(audio_file_path, format='audio/mp3')
+        if audio_on:
+            st.audio(audio_file_path, format='audio/mp3')
