@@ -13,7 +13,7 @@ client = OpenAI()
 # Select the preferred model
 MODEL = "gpt-4-1106-preview"
 
-st.set_page_config(page_title="Kbot", page_icon="https://kukac.com.br/wp-content/uploads/20220125151123.png")
+st.set_page_config(page_title="Kbot", page_icon="https://media.licdn.com/dms/image/C4D0BAQFU_zHiPt0UqQ/company-logo_200_200/0/1667941232492/kukac_logo?e=2147483647&v=beta&t=jrTrE3DIrNYM2hC70UE9lwJboIf4DFAHMUTuqGrOSxs")
 
 # CSS para mudar a fonte para Dosis
 st.markdown("""
