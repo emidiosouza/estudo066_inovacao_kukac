@@ -50,7 +50,7 @@ if "last_processed_message_id" not in st.session_state:
     st.session_state.last_processed_message_id = None
 
 #Configuração da página Streamlit
-st.sidebar.image('https://kukac.com.br/wp-content/uploads/20211110174809.png', width=280)
+st.sidebar.image('https://kukac.com.br/wp-content/uploads/20211110174809.png', width=280, divider=True)
 st.sidebar.divider()
 st.sidebar.header("Conselheiro Kukacker")
 st.sidebar.subheader("Desenvolvido pela área de inovação da Kukac")
