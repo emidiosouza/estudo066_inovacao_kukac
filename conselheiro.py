@@ -60,7 +60,7 @@ st.sidebar.caption(st.session_state.session_id)
 col1, col2, col3 = st.columns([7, 2, 6])
 with col2:
     st.image('https://kukac.com.br/wp-content/uploads/20220125151123.png', width=40)   
-st.markdown("<h2 style='text-align: center; color: black;'>Smaller headline in black </h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center; color: black;'>Como posso ajudar hoje, Kukacker?</h2>", unsafe_allow_html=True)
 st.divider()
 
 audio_on = st.toggle('ÁUDIO')
@@ -148,7 +148,7 @@ elif hasattr(st.session_state.run, 'status') and st.session_state.run.status == 
 
 
 # Pega input do usuário
-if prompt := st.chat_input("Como posso ajudar hoje, Kukacker?"):
+if prompt := st.chat_input("Escreva aqui a sua mensagem!"):
     with st.chat_message('user'):
         st.write(prompt)
 
