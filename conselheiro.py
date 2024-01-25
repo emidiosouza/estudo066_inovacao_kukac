@@ -29,6 +29,20 @@ if "retry_error" not in st.session_state: # Used for error handling
 if "last_processed_message_id" not in st.session_state:
     st.session_state.last_processed_message_id = None
 
+# Define o estilo CSS com a fonte "Dosis" do Google Fonts
+streamlit_style = """
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
+
+html, body, [class*="css"]  {
+font-family: 'Dosis', sans-serif;
+}
+</style>
+"""
+
+# Adiciona o estilo ao Streamlit
+st.markdown(streamlit_style, unsafe_allow_html=True)
+
 #Configuração da página Streamlit
 st.set_page_config(page_title="Assistente Speck EAD")
 st.sidebar.title("Conselheiro Kukacker")
