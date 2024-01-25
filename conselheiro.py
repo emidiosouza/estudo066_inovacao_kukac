@@ -25,8 +25,9 @@ html, body, [class*="st-"], h1, h2, h3, h4, h5, h6 {
 }            
 
 h1, h2, h3, h4, h5, h6 {
-    color: #ffffff;
-}  
+    color: #B5B5B5;
+}
+            
 }
                   
 </style>
@@ -52,11 +53,11 @@ if "last_processed_message_id" not in st.session_state:
 #Configuração da página Streamlit
 st.sidebar.image('https://kukac.com.br/wp-content/uploads/20211110174809.png', width=280)
 st.sidebar.divider()
-st.sidebar.title("Kbot, a Kukacker 🐌")
-st.sidebar.subheader("Desenvolvido pela área de inovação da Kukac")
-st.sidebar.subheader("Versão atual: 0.0.1")
-st.sidebar.subheader("Usando gpt-4-1106-preview API")
-st.sidebar.subheader(st.session_state.session_id)
+st.sidebar.title("Conselheiro Kukacker")
+st.sidebar.caption("Desenvolvido pela área de inovação da Kukac")
+st.sidebar.caption("Versão atual: 0.0.1")
+st.sidebar.caption("Usando gpt-4-1106-preview API")
+st.sidebar.caption(st.session_state.session_id)
 st.sidebar.divider()
 
 col1, col2, col3, col4, col5= st.columns(5)
