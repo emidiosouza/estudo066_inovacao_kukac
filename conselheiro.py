@@ -58,9 +58,11 @@ st.sidebar.caption("Usando gpt-4-1106-preview API")
 st.sidebar.caption(st.session_state.session_id)
 
 col1, col2, col3 = st.columns([7, 2, 6])
+with col1:
+    markdown("<b style='text-align: center; color: black;'>Como posso ajudar hoje, Kukacker?</b>", unsafe_allow_html=True)
 with col2:
     st.image('https://kukac.com.br/wp-content/uploads/20220125151123.png', width=40)   
-st.markdown("<b style='text-align: center; color: black;'>Como posso ajudar hoje, Kukacker?</b>", unsafe_allow_html=True)
+st.
 st.divider()
 
 audio_on = st.toggle('ÁUDIO')
