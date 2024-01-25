@@ -50,15 +50,16 @@ if "last_processed_message_id" not in st.session_state:
 st.sidebar.image('https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEU7R%2B6BqPnR7QREY0UmgxsnTcMiK5uOxQD5gBe%2FXATYs3vRotPZcH4p35rfnlWWzIH8f%2BU%2F2D8mirEWph6%2B3ifdje7ryPAqlkagWX6YRVcl65sBYI0UosVRn3LS5cvz%2BqdCimx2ZyT8z9PZw8GNLz689yGYA7rvhq4tmTM5KVcLUcdK4%2FRz6AKBK7Qa9lx7MTgF67nUX4tWqyvdYDjpg%2FZXLsQPldSTOEGnq0CmtHi%2BmwbuiuzE9qfi8OUdSjSC7fqEN2MaUBxcGWlam4ULTKRgMWZ6gaDgPpjs1X6NqpnqIWcPTYpgFwpyBFQu7CEBge4wRvgzWsfRdWBicaClZnor6znSHGHwkZ4SKnMCE71Dm4JnsV097VQfcN8uA6bPGwkt86bzyomd%2BTl5WOeSjnWRyrSYZ8x1hIVpo8UByypMBbdJhCZMqVbnSaAEjYYsuA%2FjpVnsP6jOTFy0XSsgxYZOe3eMTCs8UZhAyWEFJVAhh4OeyDkfAao%2F3CXlRr97oM5riF1S%2BYg3NMzRTOFMG2mXbrM%2FuHiJxEtBFrIXfDI2FD%2Bkxr7ITqtu7NjuyuUam9kSj8%2F0P6a%2BAYxW1%2F2i7HCjQ85H3vKL5zHsrtcVxG0OkYX2fw%3D%3D&sz=w1872-h957', width=280)
 st.sidebar.divider()
 st.sidebar.title("Kbot, a kukacker")
+st.sidebar.text("Lorem Ipsum")
+st.sidebar.divider()
 st.sidebar.caption("Desenvolvido pela área de inovação da Kukac")
 st.sidebar.caption("Versão atual: 0.0.1")
 st.sidebar.caption("Usando gpt-4-1106-preview API")
 st.sidebar.caption(st.session_state.session_id)
-st.sidebar.divider()
 
-col1, col2, col3, col4, col5= st.columns(5)
-with col3:
-    st.image('https://kukac.com.br/wp-content/uploads/20220125151123.png', width=60)   
+col1, col2, col3, col4, col5= st.columns(7)
+with col4:
+    st.image('https://kukac.com.br/wp-content/uploads/20220125151123.png', width=30)   
 st.divider()
 
 audio_on = st.toggle('ÁUDIO')
