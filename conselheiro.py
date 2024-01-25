@@ -57,7 +57,7 @@ st.sidebar.caption("Versão atual: 0.0.1")
 st.sidebar.caption("Usando gpt-4-1106-preview API")
 st.sidebar.caption(st.session_state.session_id)
 
-col1, col2, col3 = st.columns([7, 2, 6])
+col1, col2, col3 = st.columns([7, 6, 2])
 with col1:
     st.markdown("<b style='text-align: center; color: black;'>Como posso ajudar hoje, Kukacker?</b>", unsafe_allow_html=True)
 with col2:
