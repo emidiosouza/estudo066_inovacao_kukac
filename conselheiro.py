@@ -3,20 +3,6 @@ import openai
 import uuid
 import time
 
-# Define o estilo CSS com a fonte "Dosis" do Google Fonts
-streamlit_style = """
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
-
-html, body, [class*="css"]  {
-font-family: 'Dosis', sans-serif;
-}
-</style>
-"""
-
-# Adiciona o estilo ao Streamlit
-st.markdown(streamlit_style, unsafe_allow_html=True)
-
 # Inicialização da variável audio
 audio = None
 
