@@ -53,7 +53,7 @@ if "last_processed_message_id" not in st.session_state:
 #Configuração da página Streamlit
 st.sidebar.image('https://kukac.com.br/wp-content/uploads/20211110174809.png', width=280)
 st.sidebar.divider()
-st.sidebar.title("Kbot 🐌, a Kukacker")
+st.sidebar.title("🐌 Kbot, a Kukacker")
 st.sidebar.caption("Desenvolvido pela área de inovação da Kukac")
 st.sidebar.caption("Versão atual: 0.0.1")
 st.sidebar.caption("Usando gpt-4-1106-preview API")
