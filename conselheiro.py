@@ -57,7 +57,7 @@ st.sidebar.caption("Versão atual: 0.0.1")
 st.sidebar.caption("Usando gpt-4-1106-preview API")
 st.sidebar.caption(st.session_state.session_id)
 
-col1, col2, col3, col4, col5= st.columns(7)
+col1, col2, col3, col4, col5, col6, col7= st.columns(7)
 with col4:
     st.image('https://kukac.com.br/wp-content/uploads/20220125151123.png', width=30)   
 st.divider()
