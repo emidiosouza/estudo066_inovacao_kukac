@@ -59,13 +59,14 @@ st.sidebar.caption(st.session_state.session_id)
 
 col1, col2, col3 = st.columns([7, 2, 6])
 with col1:
-    markdown("<b style='text-align: center; color: black;'>Como posso ajudar hoje, Kukacker?</b>", unsafe_allow_html=True)
+    st.markdown("<b style='text-align: center; color: black;'>Como posso ajudar hoje, Kukacker?</b>", unsafe_allow_html=True)
 with col2:
     st.image('https://kukac.com.br/wp-content/uploads/20220125151123.png', width=40)   
-st.
+with col 3:
+    audio_on = st.toggle('ÁUDIO')
 st.divider()
 
-audio_on = st.toggle('ÁUDIO')
+
 
 # Função para gerar áudio
 def generate_audio_from_text(tts_text):
