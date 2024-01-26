@@ -50,8 +50,7 @@ if "last_processed_message_id" not in st.session_state:
 st.sidebar.image('https://github.com/emidiosouza/estudo066_inovacao_kukac/blob/main/kbot.png?raw=true', width=280)
 st.sidebar.divider()
 st.sidebar.title("Kbot, a kukacker")
-st.sidebar.text("Olá, eu sou Kbot, a Kukacker. Fui treinada para te ajudar a resolver problemas do dia a dia da Kukac, agindo de acordo com nosso código de ética. 
-Se precisar de ajuda, me conte o problema que está enfrentando e eu vou sugerir um plano de ação que você deve tomar para agir de acordo com nosso código.")
+st.sidebar.text("Olá, eu sou Kbot, a Kukacker. Fui treinada para te ajudar a resolver problemas do dia a dia da Kukac, agindo de acordo com nosso código de ética. Se precisar de ajuda, me conte o problema que está enfrentando e eu vou sugerir um plano de ação que você deve tomar para agir de acordo com nosso código.")
 st.sidebar.divider()
 st.sidebar.caption("Desenvolvido pela área de inovação da Kukac")
 st.sidebar.caption("Versão atual: 0.0.1")
