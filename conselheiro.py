@@ -46,26 +46,34 @@ if "retry_error" not in st.session_state: # Used for error handling
 if "last_processed_message_id" not in st.session_state:
     st.session_state.last_processed_message_id = None
 
+#Esconder botão de expansão da imagem
+hide_img_fs = '''
+<style>
+button[title="View fullscreen"]{
+    visibility: hidden;}
+</style>
+'''
+st.markdown(hide_img_fs, unsafe_allow_html=True)
+
 #Configuração da página Streamlit
+st.sidebar.write(" ")
 st.sidebar.image('https://github.com/emidiosouza/estudo066_inovacao_kukac/blob/main/kbot.png?raw=true', width=280)
 st.sidebar.divider()
-st.sidebar.title("Kbot, a kukacker")
-st.sidebar.text("Olá, eu sou Kbot, a Kukacker. Fui treinada para te ajudar a resolver problemas do dia a dia da Kukac, agindo de acordo com nosso código de ética. Se precisar de ajuda, me conte o problema que está enfrentando e eu vou sugerir um plano de ação que você deve tomar para agir de acordo com nosso código.")
+st.sidebar.title("Olá, eu sou Kbot, a Kukacker!")
+with st.sidebar: 	
+    st.write("Fui treinada para te ajudar a resolver problemas do dia a dia da Kukac, agindo de acordo com nosso código de ética. Se precisar de ajuda, me conte o problema que está enfrentando e eu vou sugerir um plano de ação que você deve tomar para agir de acordo com nosso código.")
+    st.link_button("Acesse o Código de Ética", "http://www.kukac.ai/codigodeetica")
+    audio_on = st.toggle('ÁUDIO', help="Aqui você pode ligar e desligar a voz da assistente")
 st.sidebar.divider()
-st.sidebar.caption("Desenvolvido pela área de inovação da Kukac")
-st.sidebar.caption("Versão atual: 0.0.1")
-st.sidebar.caption("Usando gpt-4-1106-preview API")
-st.sidebar.caption(st.session_state.session_id)
+st.sidebar.caption(':violet[Desenvolvido pela área de inovação da Kukac]')
+st.sidebar.caption(':violet[Versão atual: 0.0.1]')
 
-col1, col2, col3 = st.columns([10, 3, 3])
-with col1:
-     st.markdown("<b style='text-align: center; color: black;'>Como posso ajudar hoje, Kukacker?</b>", unsafe_allow_html=True)
-with col2:
-      st.image('https://kukac.com.br/wp-content/uploads/20220125151123.png', width=40)
-with col3:
-    audio_on = st.toggle('ÁUDIO')
-st.divider()
-
+st.subheader("Como posso ajudar hoje?", help="""
+  # Deixe eu te dar alguns exemplos de questões em que eu posso ajudar:
+  - Um cliente informou que não vai fazer o pagamento na data correta.
+  - Recebi uma reclamação de um cliente sobre a demora na entrega de seu projeto.
+  - Um de nossos colaboradores tem faltado constantemente ao trabalho e não entrega seus resultados no prazo.
+""", divider='rainbow')
 
 
 # Função para gerar áudio
